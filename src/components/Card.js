@@ -1,4 +1,5 @@
 import React from "react"
+import star from "../assets/images/star.png"
 
 export default function Card(props) {
     let badgeText
@@ -7,7 +8,7 @@ export default function Card(props) {
     } else if (props.location === "Online") {
         badgeText = "ONLINE"
     }
-    
+
     return (
         <div className="card">
             {
@@ -15,12 +16,12 @@ export default function Card(props) {
                 <div className="card--badge">{badgeText}</div>
             }
             <img 
-                src={`../assets/images/${props.coverImg}`}
+                src= {require(`../assets/images/${props.coverImg}`)}
                 className="card--image" 
                 alt="card-img"
             />
             <div className="card--stats">
-                <img src="../assets/images/star.png" className="card--star" alt="star" />
+                <img src={star} className="card--star" alt="star" />
                 <span>{props.stats.rating}</span>
                 <span className="gray">({props.stats.reviewCount}) • </span>
                 <span className="gray">{props.location}</span>
